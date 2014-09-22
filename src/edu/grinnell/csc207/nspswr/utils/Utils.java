@@ -33,7 +33,8 @@ public class Utils
     return result;
   }
   
-  public static void main(String args[]){
-    System.out.println(expt(5,4));
+  public static double fastExpt(double x, double p){
+    double logX = Math.log(x);
+		return Math.exp(logX*p);
   }
 }
