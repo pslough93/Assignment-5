@@ -14,14 +14,6 @@ import java.math.BigInteger;
 */
 public class Fraction
 {
-  public static void main(String[] args)
-  {
-    Fraction testFraction = new Fraction("7/-7");
-    //testFraction.simplifyFraction();
-    System.out.println(testFraction.num.toString() + ", "
-                       + testFraction.denom.toString());
-  }
-
   // +------------------+---------------------------------------------
   // | Design Decisions |
   // +------------------+
@@ -67,7 +59,14 @@ public class Fraction
       }
     simplifyFraction();
   } // Fraction(String)
-
+  
+  /**
+   * Build a new fraction with numerator num and denominator denom.
+   *
+   * 
+   * Preconditions: none
+   * Postconditions: Creates a fraction object, returns nothing (constructor).
+   */
   public Fraction(BigInteger num, BigInteger denom)
   {
     this.num = num;
@@ -77,8 +76,6 @@ public class Fraction
 
   /**
   * Build a new fraction with numerator num and denominator denom.
-  *
-  * Warning! Not yet stable.
   */
   public Fraction(int num, int denom)
   {
@@ -126,10 +123,10 @@ public class Fraction
       {
         return "0";
       } // if it's zero
-      if (denom.equals(1))
-        {
-          return num.toString();
-        }
+    if (denom.equals(BigInteger.ONE))
+      {
+        return num + ""; //only return numerator if denom is one.
+      }
         // Lump together the string represention of the numerator,
     // a slash, and the string representation of the denominator
     // return this.num.toString().concat("/").concat(this.denom.toString());
