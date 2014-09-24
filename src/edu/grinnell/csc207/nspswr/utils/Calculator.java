@@ -248,7 +248,6 @@ public class Calculator
                                 + " is currently undefined");
                           }//else
                       }//if
-                System.out.println("Passed!");
                 rCount++;
                 segmentTypes[k] = 2;
               }//if
